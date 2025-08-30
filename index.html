@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoGo Bookmarker</title>
+
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/mystyle.css">
+</head>
+
+<body>
+
+    <section class="py-5">
+
+        <h1>Bookmarker</h1>
+
+
+        <div class="bookmark-body container gap-4 py-4 px-3 mt-5">
+            <h2><i class="fa-solid fa-bookmark"></i>Bookmark your favorite sites</h2>
+            <div class="py-4 ">
+                <label for="bookmarkName" class="pb-2 fw-semibold ">
+                    <i class="fa-solid fa-book-bookmark me-2"> </i> Bookmark Name
+                </label>
+                <input type="text" oninput="validateBookmark()" placeholder="Bookmark Name" class="form-control" id="bookmarkName">
+                <div id="validationBookmark" class="invalid-feedback">
+                    This name already exists in your bookmarks
+                </div>
+            </div>
+            <div class="pb-4 ">
+                <label for="websiteURL" class="pb-2 fw-semibold ">
+                    <i class="fa-solid fa-book-bookmark me-2"> </i> WebSite URL
+                </label>
+                <input type="text" oninput="validateURL()" placeholder="WebsiteURL" class="form-control"
+                    id="websiteURL">
+                <div id="validationURL" class="invalid-feedback">
+                    Invalid URL
+                </div>
+            </div>
+            <div class="text-center">
+                <button id="addBtn" type="button" onclick="addLink()"
+                    class="btn btn-danger border-1  px-5 py-2">Submit</button>
+            </div>
+            <div class="text-center">
+                <button id="saveBtn" type="button" onclick="saveList()"
+                    class="btn btn-outline-secondary border-1 d-none px-5 py-2">Save<i
+                        class="fa-solid fa-floppy-disk"></i></button>
+            </div>
+
+
+        </div>
+
+        <div class="container py-4">
+            <table class="table text-center ">
+                <thead>
+                    <tr>
+                        <th scope="col">Index</th>
+                        <th scope="col">Website Name </th>
+                        <th scope="col">Visit</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+
+
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
